@@ -11,9 +11,12 @@ import {
 } from "react-native";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { products as mockProducts } from "@/constants/ApiMockProducts";
+import { useCart } from "@/context/CartContext";
 
 const Product = () => {
   const { id } = useLocalSearchParams();
+  const { addToCart, cart } = useCart();
+  console.log(cart);
 
   // Filter the product by id
   // (in real world,I am use react-query or useEffect )
@@ -40,7 +43,7 @@ const Product = () => {
 
         <TouchableOpacity
           style={styles.addToCartButton}
-          onPress={() => Alert.alert("Success", "Added to cart!")}
+          onPress={() => addToCart(product)}
         >
           <Text style={styles.buttonText}>Add to Cart</Text>
         </TouchableOpacity>
