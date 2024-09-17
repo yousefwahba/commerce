@@ -12,18 +12,11 @@ import {
 import { Stack, useLocalSearchParams } from "expo-router";
 import { products as mockProducts } from "@/constants/ApiMockProducts";
 
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-  description: string;
-}
-
 const Product = () => {
   const { id } = useLocalSearchParams();
 
-  // Filter the product by id (in real world, use react-query and useEffect to fetch data)
+  // Filter the product by id
+  // (in real world,I am use react-query or useEffect )
   const product = mockProducts.find(
     (product) => product.id === parseInt(id.toLocaleString())
   );
