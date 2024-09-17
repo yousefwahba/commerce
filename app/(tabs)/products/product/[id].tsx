@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
   Image,
   StyleSheet,
-  Button,
   ScrollView,
   TouchableOpacity,
-  Alert,
+  ActivityIndicator,
 } from "react-native";
 import { router, Stack, useLocalSearchParams } from "expo-router";
 import { products as mockProducts } from "@/constants/ApiMockProducts";
@@ -15,12 +14,33 @@ import { useCart } from "@/context/CartContext";
 
 const Product = () => {
   const { id } = useLocalSearchParams();
-  const { addToCart, cart } = useCart();
+  const { addToCart } = useCart();
+  const [product, setProduct] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  // (in real Apps,I am use react-query or useEffect )
-  const product = mockProducts.find(
-    (product) => product.id === parseInt(id.toLocaleString())
-  );
+  // Simulate fetching data with a delay
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setLoading(true);
+      setTimeout(() => {
+        const fetchedProduct = mockProducts.find(
+          (product) => product.id === parseInt(id.toString())
+        );
+        setProduct(fetchedProduct);
+        setLoading(false);
+      }, 200);
+    };
+
+    fetchProduct();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <View style={styles.centered}>
+        <ActivityIndicator size="large" color="#ff6f61" />
+      </View>
+    );
+  }
 
   if (!product) {
     return (
@@ -43,7 +63,6 @@ const Product = () => {
           style={styles.addToCartButton}
           onPress={() => {
             addToCart(product);
-
             router.back();
           }}
         >
