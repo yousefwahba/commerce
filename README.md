@@ -1,50 +1,76 @@
-# Welcome to your Expo app 👋
+# React Native E-Commerce App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a React Native e-commerce app using Expo that features product listing, product details, cart functionality, and simulated API fetching.
 
-## Get started
+## Screenshots
 
-1. Install dependencies
+|                                          |                                          |                                          |
+| ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| ![App Screenshot](./assets/images/1.jpg) | ![App Screenshot](./assets/images/2.jpg) | ![App Screenshot](./assets/images/3.jpg) |
+|                                          |                                          |                                          |
+
+## Features
+
+- **Product Listing**: Displays a list of products in a grid layout.
+- **Product Details**: Shows detailed information about a selected product.
+- **Cart Functionality**: Allows users to add products to the cart, view cart items, and adjust quantities.
+- **Checkout**: Provides a checkout form for entering user details and processing payments.
+
+## Technologies Used
+
+- **React Native**: For building the mobile app.
+- **Expo**: For development and testing.
+- **Context API**: For state management.
+- **AsyncStorage**: For persisting cart data.
+- **Expo Router**: For handling navigation.
+
+## Getting Started
+
+To get started with this project, follow the steps below:
+
+### Prerequisites
+
+- **Node.js**: Ensure Node.js is installed. You can download it from [nodejs.org](https://nodejs.org/).
+
+### Cloning the Repository
+
+1. Clone the repository:
 
    ```bash
-   npm install
+   git clone https://github.com/yousefwahba/commerce.git
    ```
 
-2. Start the app
+### Installing Dependencies
 
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Navigate to the project directory and install the dependencies using npm or yarn:
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Running the App
 
-## Learn more
+1. **Start the Expo development server**:
 
-To learn more about developing your project with Expo, look at the following resources:
+   ```bash
+   npx expo start --tunnel
+   ```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+2. **Open the app in Expo Go**:
+   - Install the Expo Go app from the [App Store](https://apps.apple.com/us/app/expo-go/id982107779) (iOS) or [Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US) (Android).
+   - Scan the QR code displayed in the terminal or on the Expo Developer Tools in your browser.
 
-## Join the community
+### Project Structure
 
-Join our community of developers creating universal apps.
+Here's an overview of the project's directory structure:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+| Directory/File | Description                                                                                                   |
+| -------------- | ------------------------------------------------------------------------------------------------------------- |
+| `components/`  | Contains reusable components like `ProductItem`, `CartItem`, and `Checkout`.                                  |
+| `constants/`   | Contains mock data and types used in the project.                                                             |
+| `context/`     | Contains context providers for managing cart state.                                                           |
+| `screens/`     | Contains the main screens like `ProductList` and `ProductDetails`.                                            |
+| `App.tsx`      | Entry point of the application and router folder contain all routes like `ProductList` and `ProductDetails` . |
+| `package.json` | Contains project metadata and dependencies.                                                                   |
+
+---

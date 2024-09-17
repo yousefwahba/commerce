@@ -24,7 +24,7 @@ const ProductList = () => {
   if (loading) {
     return (
       <View style={styles.loaderContainer}>
-        <ActivityIndicator size="large" color="#0000ff" />
+        <ActivityIndicator size="large" color="#ff6f61" />
       </View>
     );
   }
