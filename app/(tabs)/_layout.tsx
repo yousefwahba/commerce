@@ -7,7 +7,10 @@ export default () => {
         name="products"
         options={{ title: "Products", headerShown: false }}
       />
-      <Tabs.Screen name="cart" options={{ title: "Cart" }} />
+      <Tabs.Screen
+        name="cart"
+        options={{ title: "Cart", headerShown: false }}
+      />
     </Tabs>
   );
 };

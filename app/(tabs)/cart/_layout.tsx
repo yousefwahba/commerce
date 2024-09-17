@@ -1,15 +1,16 @@
+import { View, Text } from "react-native";
 import React from "react";
 import { Stack } from "expo-router";
 
-const StackLayout = () => {
+const StackLayoutC = () => {
   return (
     <Stack>
       <Stack.Screen
         name="index"
-        options={{ headerTitle: "Products", title: "Products" }}
+        options={{ headerTitle: "Cart", title: "Cart " }}
       />
     </Stack>
   );
 };
 
-export default StackLayout;
+export default StackLayoutC;

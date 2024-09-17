@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-import { Stack, useLocalSearchParams } from "expo-router";
+import { router, Stack, useLocalSearchParams } from "expo-router";
 import { products as mockProducts } from "@/constants/ApiMockProducts";
 import { useCart } from "@/context/CartContext";
 
@@ -43,7 +43,11 @@ const Product = () => {
 
         <TouchableOpacity
           style={styles.addToCartButton}
-          onPress={() => addToCart(product)}
+          onPress={() => {
+            addToCart(product);
+
+            router.back();
+          }}
         >
           <Text style={styles.buttonText}>Add to Cart</Text>
         </TouchableOpacity>
