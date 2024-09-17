@@ -1,3 +1,5 @@
+import { useCart } from "@/context/CartContext";
+import { router } from "expo-router";
 import React, { useState } from "react";
 import {
   View,
@@ -14,6 +16,8 @@ const Checkout = () => {
   const [address, setAddress] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({ name: "", address: "", email: "" });
+
+  const { clearCart } = useCart();
 
   const validateForm = () => {
     let valid = true;
@@ -39,9 +43,9 @@ const Checkout = () => {
 
   const handlePayment = () => {
     if (validateForm()) {
-      //need to clear context
-      //navigate to main screen
-      Alert.alert("Payment", "Proceeding to payment...");
+      Alert.alert("Completed Successfully", "order placed successfully");
+      clearCart();
+      router.push("/(tabs)");
     }
   };
 
