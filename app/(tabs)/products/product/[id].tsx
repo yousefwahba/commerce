@@ -16,10 +16,8 @@ import { useCart } from "@/context/CartContext";
 const Product = () => {
   const { id } = useLocalSearchParams();
   const { addToCart, cart } = useCart();
-  console.log(cart);
 
-  // Filter the product by id
-  // (in real world,I am use react-query or useEffect )
+  // (in real Apps,I am use react-query or useEffect )
   const product = mockProducts.find(
     (product) => product.id === parseInt(id.toLocaleString())
   );

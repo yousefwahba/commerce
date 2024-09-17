@@ -76,7 +76,11 @@ const styles = StyleSheet.create({
   },
   quantityButton: {
     backgroundColor: "#ddd",
-    padding: 5,
+    width: 30,
+    height: 30,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     borderRadius: 5,
     marginHorizontal: 5,
   },

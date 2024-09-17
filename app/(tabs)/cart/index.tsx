@@ -25,7 +25,6 @@ const Cart = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Cart</Text>
       {cart.length > 0 ? (
         <>
           <FlatList
@@ -61,7 +60,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   checkoutButton: {
-    backgroundColor: "#28a745",
+    backgroundColor: "black",
     padding: 16,
     borderRadius: 5,
     alignItems: "center",
